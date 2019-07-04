@@ -44,3 +44,29 @@
     "semicolon": false,
     "jsx-no-lambda": false
 ```
+
+## typedoc 
+主要用于interface、action type、reducers、组件属性、通用方法的文档自动生成
+```javascript
+module.exports = {
+  out: './docs_components/',
+  readme: 'none',
+  includes: [
+    'src/actions/**/*',
+    'src/common/**/*',
+    'src/components/**/*',
+    'src/containers/**',
+    'src/reducers/**',
+  ],
+  exclude: [
+    'src/index.tsx',
+    'src/bootstrap/**',
+    'src/containers/**'
+  ],
+  mode: 'file',
+  target: 'ES6',
+  excludeExternals: true,
+  excludeNotExported: true,
+  excludePrivate: true
+};
+```
