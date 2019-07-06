@@ -2,6 +2,8 @@ import * as constants from '../common/contants/index';
 import { IUserInfo } from '../common/types';
 import { ClickCountAction, CurrentLevelAction } from '../actions';
 import { combineReducers } from 'redux';
+import { connectRouter } from 'connected-react-router';
+import { History } from "history";
 
 function userInfo(state: IUserInfo = { name: 'lww', level: 2}, action: CurrentLevelAction) {
     switch (action.type) {
@@ -18,7 +20,8 @@ function clickCounts(state: number = 0, action: ClickCountAction) {
     }
 }
 
-export default combineReducers({
+export default (history: History) => combineReducers({
+    router: connectRouter(history),
     userInfo,
     clickCounts
 })

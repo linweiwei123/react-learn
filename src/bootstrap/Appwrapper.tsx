@@ -1,5 +1,5 @@
 import { hot } from 'react-hot-loader';
-import App from '../containers/App';
+import App from './App';
 
 const isDev = process.env.NODE_ENV === 'development';
 

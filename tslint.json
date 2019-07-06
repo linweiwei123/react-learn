@@ -8,13 +8,18 @@
     "quotemark": false,
     "no-console": false,
     "semicolon": false,
-    "jsx-no-lambda": false
+    "jsx-no-lambda": false,
+    "interface-name" : [false]
   },
   "linterOptions": {
     "exclude": [
+      "docs/**",
+      "docs_components/**",
+      "scripts/**",
       "config/**/*.js",
       "node_modules/**/*.ts",
-      "coverage/lcov-report/*.js"
+      "coverage/lcov-report/*.js",
+      "typedoc.js"
     ]
   }
 }
