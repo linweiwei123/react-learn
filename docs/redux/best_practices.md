@@ -39,3 +39,5 @@
 - middleware
     - 常规日志记录，奔溃日志
 - 异步action，异步数据流    
+
+## 异步action

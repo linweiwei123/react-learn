@@ -11,3 +11,11 @@
     font-size: 40px;
     min-width: 50px;
 }
+
+.title {
+    text-decoration-style: dashed;
+}
+
+.button--blue{
+    color: #2b91af;
+}

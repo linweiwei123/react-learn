@@ -1,7 +1,10 @@
-import './hello.css';
+import styles from './home.css';
 import * as React from 'react';
+import classNames from 'classnames';
 import { IHelloProps } from './interface';
 import { Link } from 'react-router-dom'
+
+const cx = classNames.bind(styles);
 
 const Home = ({name, level = 1, clickCounts, onIncrement, onDecrement, addClickCounts}: IHelloProps) => {
 
@@ -9,9 +12,14 @@ const Home = ({name, level = 1, clickCounts, onIncrement, onDecrement, addClickC
     throw new Error('level 不能小等于0');
   }
 
+  const evenBlue = cx({
+    [styles.title]: true,
+    [styles['button--blue']]: level%2 === 0
+  });
+
   return (
-    <div className="hello">
-      <div className="greeting">
+    <div className={styles.hello}>
+      <div className={evenBlue}>
         Hello {name + getExclamationMarks(level)}
       </div>
       <button onClick={onIncrement}>+</button>

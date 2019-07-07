@@ -96,7 +96,7 @@ module.exports = {
       '.jsx',
     ],
     alias: {
-      
+
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
@@ -176,11 +176,21 @@ module.exports = {
             use: [
               require.resolve('style-loader'),
               {
-                loader: require.resolve('css-loader'),
+                loader: require.resolve('typings-for-css-modules-loader'),
                 options: {
+                  modules: true,
                   importLoaders: 1,
+                  localIdentName: '[name]__[local]___[hash:base64:5]',
+                  namedExport: true,
+                  camelCase: true
                 },
               },
+              // {
+              //   loader: require.resolve('css-loader'),
+              //   options: {
+              //     importLoaders: 1,
+              //   },
+              // },
               {
                 loader: require.resolve('postcss-loader'),
                 options: {
