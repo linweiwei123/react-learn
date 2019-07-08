@@ -4,7 +4,7 @@ import { ClickCountAction, CurrentLevelAction } from '../actions';
 import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router';
 import { History } from 'history';
-import { IArticle } from '../actions/home';
+import { articles } from './home';
 
 function userInfo(state: IUserInfo = {name: 'lww', level: 2}, action: CurrentLevelAction) {
   switch (action.type) {
@@ -26,14 +26,6 @@ function clickCounts(state: number = 0, action: ClickCountAction) {
   }
 }
 
-function articles(state: IArticle[] = [], action: any) {
-  switch (action.type) {
-    case constants.FETCH_ARTICLES_ALL_FINISH:
-      return state;
-    default:
-      return state;
-  }
-}
 
 export default (history: History) => combineReducers({
   router: connectRouter(history),

@@ -6,7 +6,6 @@ import HomeContainer from '../containers/Home';
 import Login from '../containers/Login';
 import configStore, { history } from './configStore';
 import AsyncArticle from '../components/acticle/AsyncArticle';
-import * as homeActions from '../actions/home';
 
 const store = configStore({
   userInfo: {name: 'czb', level: 29},
@@ -19,7 +18,6 @@ store.subscribe(() => {
 });
 
 // 请求article数据，可能不需要异步action，在Home Class Component中请求返回数据后，同步dispatch action
-homeActions.fetchArticles()(store.dispatch);
 
 class App extends React.Component {
 

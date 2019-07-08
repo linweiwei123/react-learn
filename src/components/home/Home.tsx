@@ -3,36 +3,62 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { IHelloProps } from './interface';
 import { Link } from 'react-router-dom'
+import { homeArticles } from '../../services/home';
 
 const cx = classNames.bind(styles);
 
-const Home = ({name, level = 1, clickCounts, onIncrement, onDecrement, addClickCounts}: IHelloProps) => {
+class Home extends React.Component<IHelloProps, any> {
 
-  if (level <= 0) {
-    throw new Error('level 不能小等于0');
+  constructor(props: IHelloProps){
+    super(props);
   }
 
-  const evenBlue = cx({
-    [styles.title]: true,
-    [styles['button--blue']]: level%2 === 0
-  });
+  componentWillMount(){
+    this.props.onLoad(homeArticles())
+  }
 
-  return (
-    <div className={styles.hello}>
-      <div className={evenBlue}>
-        Hello {name + getExclamationMarks(level)}
+  render(){
+    const {level, name} = this.props;
+    if (level <= 0) {
+      throw new Error('level 不能小等于0');
+    }
+
+    const evenBlue = cx({
+      [styles.title]: true,
+      [styles['button--blue']]: level%2 === 0
+    });
+
+    return (
+      <div className={styles.hello}>
+        <div className={evenBlue}>
+          Hello {name + getExclamationMarks(level)}
+        </div>
+
+        <ul>
+          {
+            this.props.articles.map((article, index) => {
+                return (
+                  <div key={index}>
+                    <div>{article.title}</div>
+                    <div>{article.author}</div>
+                    <div>{article.introduce}</div>
+                    <div>{article.updateTime}</div>
+                    <div>{article.tags}</div>
+                  </div>
+                )
+              }
+            )
+          }
+        </ul>
+
+        <ul>
+          <li><Link to="/login">去登录页面</Link></li>
+          <li><Link to="/article">文章</Link></li>
+        </ul>
       </div>
-      <button onClick={onIncrement}>+</button>
-      <button onClick={onDecrement}>-</button>
-      <div>总计: {clickCounts} </div>
-      <button onClick={addClickCounts}>计数</button>
+    )
+  }
 
-      <ul>
-        <li><Link to="/login">去登录页面</Link></li>
-        <li><Link to="/article">文章</Link></li>
-      </ul>
-    </div>
-  )
 }
 
 function getExclamationMarks(numChars: number) {

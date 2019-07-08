@@ -1,9 +1,8 @@
-import { IArticle } from '../../actions/home';
 
 export interface StoreState {
     userInfo: IUserInfo,
     clickCounts: number,
-    articles: IArticle[]
+    articles: any
 }
 
 export interface IUserInfo {
