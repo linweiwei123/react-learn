@@ -46,5 +46,29 @@ const evenBlue = cx({
 <div className={evenBlue} />
 
 ```
+
+## sass的方案
+```javascript
+// ------------------------ add sass-loader -----------------------------//
+{
+    test: /\.scss$/,
+    loaders: [
+      require.resolve('style-loader'),
+      {
+        loader: require.resolve('typings-for-css-modules-loader'),
+        options: {
+          modules: true,
+          sass: true,
+          importLoaders: 1,
+          localIdentName: '[name]__[local]___[hash:base64:5]',
+          namedExport: true,
+          camelCase: true
+        },
+      },
+      require.resolve('sass-loader')
+    ]
+}
+```
+          
 ### 不足
 较为繁琐

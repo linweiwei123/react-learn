@@ -1,4 +1,4 @@
-import styles from './home.css';
+import styles from './home.scss';
 import * as React from 'react';
 import classNames from 'classnames';
 import { IHelloProps } from './interface';
@@ -32,6 +32,10 @@ class Home extends React.Component<IHelloProps, any> {
       <div className={styles.hello}>
         <div className={evenBlue}>
           Hello {name + getExclamationMarks(level)}
+        </div>
+
+        <div className={styles.message}>
+          I am blue
         </div>
 
         <ul>
