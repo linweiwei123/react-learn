@@ -8,9 +8,7 @@ import Footer from '../layouts/Footer/Footer';
 import Sidebar from '../layouts/Sidebar/Sidebar';
 
 const store = configStore({
-  userInfo: {name: 'czb', level: 29},
-  clickCounts: 0,
-  articles: []
+  agents: []
 });
 
 store.subscribe(() => {

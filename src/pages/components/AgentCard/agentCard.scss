@@ -1,0 +1,129 @@
+@import "../../../styles/theme.scss";
+
+.container{
+  width: 100%;
+  background-color: #fff;
+  margin-bottom: 15px;
+  padding: 15px;
+  display: flex;
+}
+
+.left{
+  width: 100px;
+  height: 80px;
+}
+
+.right{
+  width: 100%;
+  margin-left: 20px;
+}
+
+.top{
+  margin-top: 10px;
+}
+
+.bottom {
+  margin-top: 25px;
+}
+
+.top>*{
+  display: inline-block;
+}
+
+.bottom>*{
+  float: left;
+}
+
+.bottom:after{
+  content: ' ';
+  height: 0;
+  visibility: hidden;
+  clear: both;
+  display: inline-block;
+}
+
+.browsers>*{
+  display: inline-block;
+}
+
+.info-item{
+  margin-right: 25px;
+}
+
+.info-item > [class^="icon-"]{
+  font-size: 14px;
+  margin-right: 10px;
+  color: #666;
+}
+
+.name{
+  color: $themeLightBlue;
+  font-weight: 500;
+}
+
+.status-wrapper{
+  min-width: 60px;
+}
+
+.status{
+  background-color: $themeYellow;
+  color: #fff;
+  padding: 0 2px;
+}
+
+.browser{
+  background-color: $themeBGGray;
+  padding: 5px;
+  margin-right: 10px;
+  font-weight: bold;
+  position: relative;
+  width: 82px;
+}
+
+.browser:hover{
+  cursor: pointer;
+  background-color: $themeBGWeightGray;
+}
+
+.browser > [class^="icon-"]{
+  font-size: 14px;
+  margin-right: 10px;
+  color: #666;
+  position: absolute;
+  right: 0;
+}
+
+.plus-button{
+  background-color: $themeLightBlue;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  margin-right: 10px;
+  padding: 5px 0;
+}
+
+.plus-button:hover{
+  background-color: $themeWeightBlue;
+  cursor: pointer;
+}
+
+.plus-button > [class^="icon-"]{
+  color: #fff;
+  font-size: 14px;
+}
+
+.deny-button{
+  float: right;
+  width: 80px;
+  height: 24px;
+  background-color: $themeLightBlue;
+  color: #fff;
+  line-height: 24px;
+  padding: 0 10px;
+}
+
+.deny-button > [class^="icon-"]{
+  color: #fff;
+  font-size: 14px;
+  margin-right: 10px;
+}

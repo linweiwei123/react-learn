@@ -1,0 +1,101 @@
+@import "../../../styles/theme.scss";
+
+.container{
+  margin-bottom: 15px;
+  height: 50px;
+  background-color: #fff;
+  width: 100%;
+}
+
+.container:after{
+  content: ' ';
+  height: 0;
+  display: block;
+  clear: both;
+  visibility: hidden;
+}
+
+.typeTags{
+  float: left;
+  display: flex;
+  width: 31.5%;
+
+  .tag{
+    width: 90px;
+    height: 50px;
+    text-align: center;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid rgba(221, 221, 221, 0.5);
+  }
+
+  .tag.active{
+    color: $themeLightBlue;
+    border-bottom: 3px solid $themeLightBlue;
+  }
+
+  .tag:hover{
+    color: $themeLightBlue;
+    cursor: pointer;
+    border-bottom: 3px solid $themeLightBlue;
+  }
+
+}
+
+.search{
+  padding: 10px 25px;
+  width: 250px;
+  height: 50px;
+  float: left;
+  position: relative;
+
+  .search-container{
+    width: 100%;
+    height: 100%;
+    background-color: $themeBGGray;
+    display: flex;
+    align-items: center;
+
+    [class="icon-search"] {
+      opacity: 0.7;
+      padding: 0 5px;
+    }
+
+    .searchInput{
+      height: 100%;
+      background-color: $themeBGGray;
+      outline:none;
+      border:none;
+      width: 210px;
+    }
+  }
+}
+
+.showTypeButton{
+  display: flex;
+  float: right;
+  align-items: center;
+  height: 50px;
+  margin-right: 25px;
+  justify-content: space-between;
+
+  [class^="icon-"]{
+    height: 50px;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  [class^="icon-"]:hover{
+    color: $themeLightBlue;
+    cursor: pointer;
+  }
+
+  [class^="icon-"].active{
+    color: $themeLightBlue;
+    cursor: pointer;
+  }
+}

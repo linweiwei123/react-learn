@@ -1,27 +1,5 @@
 @import "../../../styles/theme.scss";
 
-.hello {
-    text-align: center;
-    margin: 20px;
+.container {
     font-size: 18px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.hello button {
-    margin-left: 25px;
-    margin-right: 25px;
-    font-size: 40px;
-    min-width: 50px;
-}
-
-.title {
-    text-decoration-style: dashed;
-}
-
-.button--blue{
-    color: $colorBlue;
-}
-
-.message{
-    color: $colorBlue;
 }

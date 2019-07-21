@@ -1,6 +1,7 @@
 .sidebar {
   width: 280px;
   height: 100vh;
+  position: fixed;
   background-color: #314052;
 }
 
@@ -25,6 +26,13 @@
   }
 
   a:hover{
+    color: #00B4CF;
+    background-color: #435466;
+  }
+}
+
+.active {
+  a{
     color: #00B4CF;
     background-color: #435466;
   }

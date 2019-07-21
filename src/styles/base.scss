@@ -20,14 +20,29 @@ body {
 }
 
 .layout-main{
-  height: 100vh;
   padding-top: 80px;
   padding-bottom: 40px;
   width: 100%;
-  max-width: 1400px;
+  max-width: $bodyMaxWidth;
   display: flex;
 }
 
+
 .layout-route-view{
   overflow-y: auto;
+  padding: 25px;
+}
+
+@media screen and (min-width: $bodyMaxWidth){
+  .layout-route-view{
+    width: 1120px;
+    margin-left: calc((100% - 1200px)/2 + 280px);
+  }
+}
+
+@media screen and (max-width: $bodyMaxWidth){
+  .layout-route-view{
+    width: calc(100% - 280px);
+    margin-left: 280px;
+  }
 }

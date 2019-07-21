@@ -2,7 +2,7 @@ import * as React from 'react';
 import routes from './routes.config';
 import { Route, Switch } from 'react-router';
 import asyncComponent from '../components/AsyncComponent';
-import LoadingComponent from '../components/loading/Loading';
+import LoadingComponent from '../components/Loading/Loading';
 
 const DynamicRoutes = () => {
 
