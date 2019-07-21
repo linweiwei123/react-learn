@@ -5,7 +5,6 @@ import configStore, { history } from './configStore';
 import DynamicRoutes from './DynamicRoutes';
 import Header from '../layouts/Header/Header';
 import Footer from '../layouts/Footer/Footer';
-import styles from '../styles/base.scss';
 import Sidebar from '../layouts/Sidebar/Sidebar';
 
 const store = configStore({
@@ -24,11 +23,11 @@ class App extends React.Component {
 
   public render() {
     const layout = (
-      <div className={styles["layout-app"]}>
+      <div className="layout-app">
         <Header />
-        <div className={styles["layout-main"]}>
+        <div className="layout-main">
           <Sidebar/>
-          <div className={styles["layout-route-view"]}>
+          <div className="layout-route-view">
             <DynamicRoutes/>
           </div>
         </div>

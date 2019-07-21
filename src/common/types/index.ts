@@ -13,7 +13,7 @@ export interface IUserInfo {
 }
 
 export interface IRouteNode {
-  path: string,
+  path: any,
   name: string,
   component: ComponentType | (() => Promise<any>),
   isAsync?: boolean,

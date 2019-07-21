@@ -2,7 +2,6 @@ module.exports = {
   out: './docs_components/',
   includes: './src',
   exclude: [
-    'src/Footer.tsx',
     'src/bootstrap/**',
     'src/containers/**'
   ],

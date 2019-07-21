@@ -1,23 +1,35 @@
 .sidebar {
-  width: 300px;
+  width: 280px;
   height: 100vh;
   background-color: #314052;
 }
 
 .container{
   width: 100%;
-  padding-top: 5px;
+  padding-top: 35px;
 }
 
 .menu{
-  width: 100%;
-  height: 45px;
 
   a{
+    padding: 0 40px;
     color: #F3F3F3;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    display: block;
 
     *{
       display: inline-block;
     }
   }
+
+  a:hover{
+    color: #00B4CF;
+    background-color: #435466;
+  }
+}
+
+.text{
+  margin-left: 20px;
 }

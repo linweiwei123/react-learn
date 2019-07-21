@@ -13,7 +13,7 @@ export default () => {
               <li key={index} className={styles.menu}>
                 <Link to={item.path}>
                   <div className="icon-sitemap"></div>
-                  <div>{item.name.toUpperCase()}</div>
+                  <div className={styles.text}>{item.name.toUpperCase()}</div>
                 </Link>
               </li>
             )
