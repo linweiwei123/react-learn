@@ -12,7 +12,7 @@
 ```
     C:.
     │  index.css
-    │  index.tsx
+    │  Footer.tsx
     │
     ├─actions
     ├─assets
@@ -55,13 +55,12 @@ module.exports = {
     'src/actions/**/*',
     'src/common/**/*',
     'src/components/**/*',
-    'src/containers/**',
+    pages,
     'src/reducers/**',
   ],
   exclude: [
-    'src/index.tsx',
-    'src/bootstrap/**',
-    'src/containers/**'
+    HeadeHeader.tsx  'src/bootstrap/**',
+    pages
   ],
   mode: 'file',
   target: 'ES6',

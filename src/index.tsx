@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import './index.css';
+import './styles/base.scss';
 import registerServiceWorker from './bootstrap/registerServiceWorker';
 import AppWrapper from "./bootstrap/Appwrapper";
 

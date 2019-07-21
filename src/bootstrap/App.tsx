@@ -1,11 +1,12 @@
 import * as React from 'react';
 import { Provider } from 'react-redux';
-import { Switch, Route } from 'react-router';
 import { ConnectedRouter } from 'connected-react-router';
-import HomeContainer from '../containers/Home';
-import Login from '../containers/Login';
 import configStore, { history } from './configStore';
-import AsyncArticle from '../components/acticle/AsyncArticle';
+import DynamicRoutes from './DynamicRoutes';
+import Header from '../layouts/Header/Header';
+import Footer from '../layouts/Footer/Footer';
+import styles from '../styles/base.scss';
+import Sidebar from '../layouts/Sidebar/Sidebar';
 
 const store = configStore({
   userInfo: {name: 'czb', level: 29},
@@ -22,14 +23,23 @@ store.subscribe(() => {
 class App extends React.Component {
 
   public render() {
+    const layout = (
+      <div className={styles["layout-app"]}>
+        <Header />
+        <div className={styles["layout-main"]}>
+          <Sidebar/>
+          <div className={styles["layout-route-view"]}>
+            <DynamicRoutes/>
+          </div>
+        </div>
+        <Footer/>
+      </div>
+  );
+
     return (
       <Provider store={store}>
         <ConnectedRouter history={history}>
-          <Switch>
-            <Route exact={true} path="/" component={HomeContainer}/>
-            <Route path="/login" component={Login}/>
-            <Route path="/article" component={AsyncArticle}/>
-          </Switch>
+          {layout}
         </ConnectedRouter>
       </Provider>
     );

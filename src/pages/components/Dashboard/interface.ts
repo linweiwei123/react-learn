@@ -1,4 +1,4 @@
-import { IArticle } from '../../actions/home';
+import { IArticle } from '../../../actions/home';
 
 export interface IHelloProps {
   name: string,

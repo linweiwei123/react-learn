@@ -1,5 +1,5 @@
-import asyncComponent from '../../common/components/AsyncComponent';
-import Loading from '../../common/components/loading/Loading';
+import asyncComponent from '../../../components/AsyncComponent';
+import Loading from '../../../components/loading/Loading';
 
 const loadComponent = () => import ('./article');
 const AsyncArticle = asyncComponent(loadComponent, Loading);

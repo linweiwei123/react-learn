@@ -1,9 +1,9 @@
-import { StoreState } from '../common/types';
+import { StoreState } from '../../common/types/index';
 import { connect } from 'react-redux';
-import * as actions from '../actions/index';
-import * as constants from '../common/contants/index'
-import Home from '../components/home/Home';
-import { IArticle } from '../actions/home';
+import * as actions from '../../actions/index';
+import * as constants from '../../common/contants/index'
+import Home from '../components/Dashboard/home';
+import { IArticle } from '../../actions/home';
 
 export const mapStateToProps = (state: StoreState) => ({
   name: state.userInfo.name,

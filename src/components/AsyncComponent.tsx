@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { IAsyncComponentState } from './interface';
-import { delayLoad } from '../utils/commonUtils';
+import { delayLoad } from '../common/utils/commonUtils';
 
 const asyncComponent = (loadComponent: any, LoadingComponent: any) => {
   return class AsyncComponent extends React.Component<any, IAsyncComponentState> {
