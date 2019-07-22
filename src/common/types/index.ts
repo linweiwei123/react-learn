@@ -3,6 +3,7 @@ import { ComponentType } from 'react';
 
 export interface StoreState {
   agents: any;
+  currentAgent?: any
 }
 
 export interface IRouteNode {

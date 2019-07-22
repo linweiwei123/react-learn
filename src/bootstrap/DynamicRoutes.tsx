@@ -10,7 +10,7 @@ const DynamicRoutes = () => {
     <Switch>
       {
         routes.map((item, index) => {
-          let Component: any = item.isAsync ? asyncComponent(item.component, LoadingComponent) : item.component;
+          const Component: any = item.isAsync ? asyncComponent(item.component, LoadingComponent) : item.component;
           return <Route key={index} path={item.path} component={Component} {...item.options} />
         })
       }

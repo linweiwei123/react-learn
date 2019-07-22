@@ -12,9 +12,17 @@ export function agents(state: IAgent[] = [], action: any) {
   }
 }
 
-function replaceAgent(agents: IAgent[], toReplaceAgent: IAgent){
-  let temp = agents.slice(0);
-  return temp.map(item => {
+export function currentAgent(state: any = {}, action: any) {
+  switch (action.type) {
+    case constants.LOCAL_CHANGED_AGENT:
+      return action.currentAgent;
+    default: return state;
+  }
+}
+
+function replaceAgent(state: IAgent[], toReplaceAgent: IAgent){
+  const temp = state.slice(0);
+  return temp.map((item: IAgent) => {
     return item.id === toReplaceAgent.id ? toReplaceAgent : item;
   })
 }

@@ -12,7 +12,13 @@ export const mapDispatchToProps = (dispatch: any) => ({
   onLoad: (payload: Promise<IAgent[]>) => dispatch({
     type: constants.FETCH_AGETNS_ALL_FINISH,
     payload
-  })
+  }),
+  changeLocalAgent: (agent: IAgent) => {
+    dispatch({
+      type: constants.LOCAL_CHANGED_AGENT,
+      currentAgent: agent
+    })
+  }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

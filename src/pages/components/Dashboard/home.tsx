@@ -5,7 +5,7 @@ import AgentCard from '../AgentCard/AgentCard';
 import { IAgent, ICount } from '../../../actions/home';
 import CountBlock from '../CountBlock/CountBlock';
 import QueryBlock from '../QueryBlock/QueryBlock';
-import TagsModal, { IPosition } from '../../../components/TagsModal/TagsModal';
+import TagsModal, { IPosition } from '../TagsModal/TagsModal';
 
 class Home extends React.Component<any, any> {
 
@@ -38,7 +38,7 @@ class Home extends React.Component<any, any> {
   }
 
   onChangeTag(type: string){
-    let agents = this.state.agents;
+    const agents = this.state.agents;
     this.setState({
       agentsShow: filterByType(agents, type),
       query: {
@@ -48,7 +48,7 @@ class Home extends React.Component<any, any> {
   }
 
   onSearchName(search: string){
-    let agents = this.state.agents;
+    const agents = this.state.agents;
     this.setState({
       agentsShow: filterBySearch(agents, search),
       query: {
@@ -57,7 +57,8 @@ class Home extends React.Component<any, any> {
     });
   }
 
-  onChangeTagsModal(position: IPosition, isShowTagsModal?: boolean){
+  onChangeTagsModal(agent: IAgent, position: IPosition, isShowTagsModal?: boolean){
+    this.props.changeLocalAgent(agent);
     this.setState({
       tagModal: {
         position,
@@ -82,11 +83,18 @@ class Home extends React.Component<any, any> {
             return <AgentCard
               key={index}
               agent={item}
-              onAdd={(position: IPosition, isShowTagsModal?: boolean) => this.onChangeTagsModal(position, isShowTagsModal)}
+              onAdd={
+                (agent: IAgent, position: IPosition, isShowTagsModal?: boolean) =>
+                  this.onChangeTagsModal(agent, position, isShowTagsModal)
+              }
             />
           })
         }
-        <TagsModal isShow={this.state.tagModal.isShow} position={this.state.tagModal.position}/>
+        <TagsModal
+          isShow={this.state.tagModal.isShow}
+          position={this.state.tagModal.position}
+          // onConfirm={arr => this.changeAgent()}
+        />
       </div>
     )
   }
@@ -96,7 +104,7 @@ class Home extends React.Component<any, any> {
 function countBlockData(agents: IAgent[]) : ICount{
   let building: number = 0;
   let idle: number = 0;
-  let total: number = agents.length;
+  const total: number = agents.length;
   let physical: number = 0;
   let virtual: number = 0;
 
@@ -138,8 +146,8 @@ const filterChain =  (agents: IAgent[]) => (type: string) => (search: string) =>
  * @param type
  */
 function filterByType(agents: IAgent[], type: string){
-  let typeLowerCase = type.toLowerCase();
-  let filtered =  typeLowerCase === 'all' ? agents:
+  const typeLowerCase = type.toLowerCase();
+  const filtered = typeLowerCase === 'all' ? agents:
     agents.filter((agent: IAgent) => agent.type.toLowerCase() === typeLowerCase)
   return filtered
 }

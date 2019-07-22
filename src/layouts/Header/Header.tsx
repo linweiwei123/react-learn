@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from './header.scss';
 import classNames from 'classnames';
 
-let cx = classNames.bind(styles);
+const cx = classNames.bind(styles);
 
 export default () => {
 

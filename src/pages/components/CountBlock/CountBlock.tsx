@@ -7,12 +7,12 @@ const CountBlock = (count: ICount) => {
   return (
     <div className={styles.container}>
       <div className={`${styles.statusBlock} ${styles.building}`}>
-        <div className="icon-cog"></div>
+        <div className="icon-cog"/>
         <span className={styles.text}>Building</span>
         <div className={styles.value}>{count.building}</div>
       </div>
       <div className={`${styles.statusBlock} ${styles.idle}`}>
-        <div className="icon-coffee"></div>
+        <div className="icon-coffee"/>
         <span className={styles.text}>Idle</span>
         <div className={styles.value}>{count.idle}</div>
       </div>

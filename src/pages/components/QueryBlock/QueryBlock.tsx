@@ -36,13 +36,13 @@ const QueryBlock = ({ onChangeType, onSearchName }: any) => {
       </div>
       <div className={styles.search}>
         <div className={styles.searchContainer}>
-          <span className="icon-search"></span>
+          <span className="icon-search"/>
           <input type="text" className={styles.searchInput} onChange={(e) => onSearchName(e.target.value) }/>
         </div>
       </div>
       <div className={styles.showTypeButton}>
-        <div className={`icon-th-card ${activeShowType === 'card' ? styles.active: ''}`} onClick={() => changeShowType('card')}></div>
-        <div className={`icon-th-list ${activeShowType === 'list' ? styles.active: ''}`} onClick={() => changeShowType('list')}></div>
+        <div className={`icon-th-card ${activeShowType === 'card' ? styles.active: ''}`} onClick={() => changeShowType('card')}/>
+        <div className={`icon-th-list ${activeShowType === 'list' ? styles.active: ''}`} onClick={() => changeShowType('list')}/>
       </div>
     </div>
   )

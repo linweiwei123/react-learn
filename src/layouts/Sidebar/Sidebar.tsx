@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import {withRouter} from 'react-router-dom';
 import classNames from 'classnames';
 
-let cx = classNames.bind(styles);
+const cx = classNames.bind(styles);
 
 const Sidebar = (props: any) => {
 
@@ -25,7 +25,7 @@ const Sidebar = (props: any) => {
             return (
               <li key={index} className={menuClass}>
                 <Link to={item.path}>
-                  <div className={item.icon}></div>
+                  <div className={item.icon}/>
                   <div className={styles.text}>{item.name.toUpperCase()}</div>
                 </Link>
               </li>

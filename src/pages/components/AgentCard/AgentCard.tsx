@@ -23,13 +23,17 @@ const AgentCard = ( { agent, onChangeAgent, onAdd }: any) => {
     onChangeAgent(changeAgent(agent.id, agent))
   };
 
-  const onClickPlus = (e: MouseEvent) => {
+  const onClickPlus = (e: any) => {
     let target: any = e.target;
     target = target.className === 'icon-plus'? target.parentNode : target;
-    onAdd({
-      x: target.offsetLeft,
-      y: target.offsetTop + 30
-    }, true)
+    onAdd(
+      agent,
+        {
+        x: target.offsetLeft,
+        y: target.offsetTop
+      },
+      true
+    )
   };
 
   return (
@@ -59,7 +63,7 @@ const AgentCard = ( { agent, onChangeAgent, onAdd }: any) => {
         </div>
         <div className={styles.bottom}>
           <div className={styles.plusButton} onClick={(e) => onClickPlus(e)}>
-            <span className="icon-plus"></span>
+            <span className="icon-plus"/>
           </div>
           <div className={styles.browsers}>
             {
@@ -67,14 +71,14 @@ const AgentCard = ( { agent, onChangeAgent, onAdd }: any) => {
                 return (
                   <div key={index} className={styles.browser} onClick={() => deleteResource(item)}>
                     <span>{item}</span>
-                    <span className="icon-trash"></span>
+                    <span className="icon-trash"/>
                   </div>
                 )
               })
             }
           </div>
           <div className={styles.denyButton}>
-            <span className="icon-deny"></span>
+            <span className="icon-deny"/>
             <span>Deny</span>
           </div>
         </div>
