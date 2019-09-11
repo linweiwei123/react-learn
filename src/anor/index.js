@@ -3,8 +3,6 @@ import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router';
 import { default as createBrowserHistory } from 'history/createBrowserHistory';
 import configStore from './configStore';
-import { History } from 'history';
-import { agents, currentAgent } from '../reducers/home';
 
 function Wad(){
 
